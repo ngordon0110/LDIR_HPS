@@ -77,7 +77,7 @@ def LIB_SEARCH(img_in, library_in, match_thres=0.6, save_thres=.02, legend=False
         #once a similarity map exists check to see if any of the pixels correspond to a set match threshold
         if np.any(similarity_map > match_thres):
             #if true then create a mask of the dataset, this creates a 2d array of booleans
-            mask = similarity_map > 0.6
+            mask = similarity_map > match_thres
             #.sum() acts kind of similar to if statement default logic, so all true booleans are summed effectively
             #creating a number of pixels that match the threshold.
             count = mask.sum()
